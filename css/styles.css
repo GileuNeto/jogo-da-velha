@@ -1,0 +1,138 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    background-color: #3453a8;
+}
+
+.board{
+    display: grid;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: repeat(3, auto);
+}
+
+.board.x .grid:not(.x):not(.circle):hover::after,
+.board.x .grid:not(.x):not(.circle):hover::before,
+.board.circle .grid:not(.x):not(.circle):hover::after,
+.board.circle .grid:not(.x):not(.circle):hover::before{
+    opacity: 25%;
+}
+
+.grid{
+    width: 100px;
+    height: 100px;
+    border: 2px solid #fbfbfb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.grid:nth-child(1),
+.grid:nth-child(2),
+.grid:nth-child(3){
+    border-top: none;
+}
+
+.grid:nth-child(1),
+.grid:nth-child(4),
+.grid:nth-child(7){
+    border-left: none;
+}
+
+.grid:nth-child(3),
+.grid:nth-child(6),
+.grid:nth-child(9){
+    border-right: none;
+}
+
+.grid:nth-child(7),
+.grid:nth-child(8),
+.grid:nth-child(9){
+    border-bottom: none;
+}
+
+.grid.x,
+.grid.circle{
+    cursor: not-allowed;
+}
+
+.grid.x::before,
+.grid.x::after,
+.board.x .grid:not(.x):not(.circle):hover::after,
+.board.x .grid:not(.x):not(.circle):hover::before{
+    content: "";
+    height: 14px;
+    width: 90px;
+    background: #aff;
+    position: absolute;
+    border-radius: 4px;
+}
+
+.grid.x::after,
+.board.x .grid:not(.x):not(.circle):hover::after{
+    transform: rotate(-45deg);
+}
+
+.grid.x::before,
+.board.x .grid:not(.x):not(.circle):hover::before{
+    transform: rotate(45deg);
+}
+
+.grid.circle::before,
+.grid.circle::after,
+.board.circle .grid:not(.x):not(.circle):hover::after,
+.board.circle .grid:not(.x):not(.circle):hover::before{
+    content: "";
+    height: 65px;
+    width:65px;
+    position: absolute;
+    border-radius: 55%;
+    border: 10px solid #fbff;
+}
+
+.mensage{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    flex-direction: column;
+}
+
+.btn-winner{
+    font-size: 2.5rem;
+    background-color:rgba(83, 194, 79, 1 );
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    margin-top: 16px;
+    margin-top: 16px;
+    color: white;
+}
+
+.btn-winner:hover{
+    transition-duration: 0.8s;
+    color:rgba(83, 194, 79, 1 );
+    background-color: #fff;
+}
+
+.p-winner{
+    color: #fff;
+    font-size: 5rem;
+}

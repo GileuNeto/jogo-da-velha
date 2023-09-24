@@ -136,3 +136,7 @@ body{
     color: #fff;
     font-size: 5rem;
 }
+
+.show-winning-message{
+    display: flex;
+}

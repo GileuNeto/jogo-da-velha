@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <div class="board x" board">
+    <div class="board" id="board"">
         <div class="grid" id="grid"></div>
         <div class="grid" id="grid"></div>
         <div class="grid" id="grid"></div>
@@ -18,9 +18,9 @@
         <div class="grid" id="grid"></div>
         <div class="grid" id="grid"></div>
     </div>
-    <div class="mensage">
-        <p class="p-winner">Ganhou</p>
-        <button class="btn-winner">Jogar Novamente</button>
+    <div class="mensage" data-winning-message>
+        <p class="p-winner" data-winning-message-text>Ganhou</p>
+        <button class="btn-winner" data-restart-button>Jogar Novamente</button>
     </div>
 </body>
     <script src="js/scripts.js" ></script>
